@@ -9,12 +9,9 @@ import { API } from '../domain.constant';
 export class CardResource {
   constructor(private http: Http) { }
 
-  public getCards(): Observable<Card[]> {
+  public getCards(): Observable<any> {
     const url = API.BASE_URL + '/cards';
 
-    return this.http
-      .get(url)
-      .map(response => response.json())
-      .map(response => response.cards);
+    return this.http.get(url).map(response => response.json());
   }
 }

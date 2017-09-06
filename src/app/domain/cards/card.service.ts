@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs/Rx';
 
 import { CardResource } from './card.resource';
 import { Card } from './card.model';
@@ -8,7 +8,7 @@ import { Card } from './card.model';
 export class CardService {
   constructor(private cardResource: CardResource) { }
 
-  public getCards() {
-    return this.cardResource.getCards();
+  public getCards(): Observable<Card[]> {
+    return this.cardResource.getCards().map(response => response.cards);
   }
 }
