@@ -1,17 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
+import { RequestMethod } from '@angular/http';
 
 import { Card } from './card.model';
-import { API } from '../domain.constant';
+import { ResourceRequest } from '../../core/resource/resource-request';
 
 @Injectable()
 export class CardResource {
-  constructor(private http: Http) { }
+  constructor(private resourceRequest: ResourceRequest) { }
 
-  public getCards(): Observable<any> {
-    const url = API.BASE_URL + '/cards';
-
-    return this.http.get(url).map(response => response.json());
+  public getCards() {
+    return this.resourceRequest.sendRequest<{ cards: Card[]}>(RequestMethod.Get, 'cards');
   }
 }
