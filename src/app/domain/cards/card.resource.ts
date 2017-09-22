@@ -9,6 +9,6 @@ export class CardResource {
   constructor(private resourceRequest: ResourceRequest) { }
 
   public getCards() {
-    return this.resourceRequest.sendRequest<{ cards: Card[]}>(RequestMethod.Get, 'cards');
+    return this.resourceRequest.sendRequest<{ cards: Card[]}>(RequestMethod.Get, 'cardz');
   }
 }

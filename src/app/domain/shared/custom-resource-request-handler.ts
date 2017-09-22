@@ -12,9 +12,18 @@ export class CustomResourceRequestHandler implements ResourceRequestHandler {
 
   public handleRequestError(error: Response | Error) {
     let throwableError = error;
+    let message = null;
 
     if (error instanceof Response) {
-      throwableError = error.json();
+      if (error.status === 404) {
+        message = "Resource not found";
+      } else {
+        throwableError = error.json();
+      }
+    }
+
+    if (message) {
+      throwableError = new Error(message);
     }
 
     return Observable.throw(throwableError);

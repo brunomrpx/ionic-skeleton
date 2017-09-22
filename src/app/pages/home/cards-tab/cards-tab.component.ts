@@ -9,12 +9,16 @@ import { CardService } from '../../../domain/cards/card.service';
 })
 export class CardsTabComponent {
   public cards: Card[] = [];
+  public errorMessage: string = null;
 
   constructor(public cardService: CardService) { }
 
   ngOnInit() {
     this.cardService.getCards().take(1).subscribe(cards => {
+      this.errorMessage = null;
       this.cards = cards;
+    }, error => {
+      this.errorMessage = error.message;
     });
   }
 }
