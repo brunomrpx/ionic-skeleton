@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { CustomResourceRequestHandler } from 'domain/shared/custom-resource-request-handler';
+import { CustomResourceRequestHandler } from './custom-resource-request-handler';
 
 @NgModule({
   declarations: [],

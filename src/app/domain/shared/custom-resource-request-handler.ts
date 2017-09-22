@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
-import { ResourceRequestHandler } from 'core/resource/resource-request';
+import { ResourceRequestHandler } from '../../core/resource/resource-request';
 
 @Injectable()
 export class CustomResourceRequestHandler implements ResourceRequestHandler {

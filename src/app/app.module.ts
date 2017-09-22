@@ -6,11 +6,11 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
-import { CoreModule } from 'core/core.module';
-import { DomainModule } from 'domain/domain.module';
-import { PagesModule } from 'pages/pages.module';
+import { CoreModule } from './core/core.module';
+import { DomainModule } from './domain/domain.module';
+import { PagesModule } from './pages/pages.module';
 
-import { AppComponent } from 'app.component';
+import { AppComponent } from './app.component';
 
 @NgModule({
   bootstrap: [IonicApp],

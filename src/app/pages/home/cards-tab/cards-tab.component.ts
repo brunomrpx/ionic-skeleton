@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import { Card } from 'domain/cards/card.model';
-import { CardService } from 'domain/cards/card.service';
+import { Card } from '../../../domain/cards/card.model';
+import { CardService } from '../../../domain/cards/card.service';
 
 @Component({
   selector: 'cards-tab',

@@ -3,10 +3,10 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomeComponent } from 'pages/home/home.component';
-import { ResourceRequest } from 'core/resource/resource-request';
-import { API } from 'domain/domain.constant';
-import { CustomResourceRequestHandler } from 'domain/shared/custom-resource-request-handler';
+import { HomeComponent } from './pages/home/home.component';
+import { ResourceRequest } from './core/resource/resource-request';
+import { API } from './domain/domain.constant';
+import { CustomResourceRequestHandler } from './domain/shared/custom-resource-request-handler';
 
 @Component({
   templateUrl: 'app.component.html'

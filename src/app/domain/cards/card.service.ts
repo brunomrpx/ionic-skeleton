@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 
-import { CardResource } from 'domain/cards/card.resource';
-import { Card } from 'domain/cards/card.model';
+import { CardResource } from './card.resource';
+import { Card } from './card.model';
 
 @Injectable()
 export class CardService {

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { ResourceRequest } from 'core/resource/resource-request';
+import { ResourceRequest } from './resource/resource-request';
 
 @NgModule({
   declarations: [],
