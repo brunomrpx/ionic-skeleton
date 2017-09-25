@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 import { Card } from '../../../domain/cards/card.model';
 import { CardService } from '../../../domain/cards/card.service';
+import { PageMessageDirective } from '../../../core/page-message/page-message.directive';
 
 @Component({
   selector: 'cards-tab',
@@ -9,16 +10,24 @@ import { CardService } from '../../../domain/cards/card.service';
 })
 export class CardsTabComponent {
   public cards: Card[] = [];
-  public errorMessage: string = null;
+  public pageMessageOptions = {
+    show: false,
+    message: null,
+    tryAgain: true
+  };
+
+  @ViewChild(PageMessageDirective) pageMessageDirective: PageMessageDirective;
 
   constructor(public cardService: CardService) { }
 
-  ngOnInit() {
+  ionViewWillEnter() {
     this.cardService.getCards().take(1).subscribe(cards => {
-      this.errorMessage = null;
+      this.pageMessageDirective.pageMessageOptions.value.show = false;
+
       this.cards = cards;
     }, error => {
-      this.errorMessage = error.message;
+      this.pageMessageDirective.pageMessageOptions.value.show = true;
+      this.pageMessageDirective.pageMessageOptions.value.show = error.message;
     });
   }
 }

@@ -4,11 +4,13 @@ import { RequestMethod } from '@angular/http';
 import { Card } from './card.model';
 import { ResourceRequest } from '../../core/resource/resource-request';
 
+var wrong = false;
+
 @Injectable()
 export class CardResource {
   constructor(private resourceRequest: ResourceRequest) { }
 
   public getCards() {
-    return this.resourceRequest.sendRequest<{ cards: Card[]}>(RequestMethod.Get, 'cardz');
+    return this.resourceRequest.sendRequest<{ cards: Card[]}>(RequestMethod.Get, 'cards');
   }
 }

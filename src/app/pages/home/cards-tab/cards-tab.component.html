@@ -4,10 +4,12 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
-  <ion-list *ngIf="!errorMessage">
-    <ion-item *ngFor="let card of cards">
-      {{ card.name }}
-    </ion-item>
-  </ion-list>
-  <page-message [message]="errorMessage"></page-message>
+  <div pageMessage>
+    <ion-list *ngIf="!errorMessage">
+      <ion-item *ngFor="let card of cards">
+        {{ card.name }}
+      </ion-item>
+    </ion-list>
+  </div>
+  <!-- <page-message [message]="errorMessage"></page-message> -->
 </ion-content>
